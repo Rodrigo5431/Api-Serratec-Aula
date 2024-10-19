@@ -1,0 +1,12 @@
+package org.serratec.backend.serviceDto.domain;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.serratec.backend.servicedto.domain.Perfil;
+import org.serratec.backend.servicedto.domain.Usuario;
+import org.serratec.backend.servicedto.domain.UsuarioPerfil;
+import org.

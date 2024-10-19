@@ -1,0 +1,14 @@
+package org.serratec.backend.serviceDto.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
+
+@Configuration
+public class MailConfig {
+
+	@Autowired
+	private JavaMailSender javaMailSender;
+	
+	
+}

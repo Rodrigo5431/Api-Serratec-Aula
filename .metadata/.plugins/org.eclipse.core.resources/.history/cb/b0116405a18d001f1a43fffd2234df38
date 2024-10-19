@@ -1,0 +1,6 @@
+package org.serratec.backend.serviceDto.service;
+
+@Service
+public class FotoService {
+
+}

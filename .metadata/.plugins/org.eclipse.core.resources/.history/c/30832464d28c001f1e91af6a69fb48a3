@@ -1,0 +1,13 @@
+package org.serratec.backend.serviceDto.security;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwUtil {
+
+	@Value("${auth-jwt-secret}")
+	private String jwtSecret;
+	
+	private Long jwt
+}

@@ -1,0 +1,26 @@
+package org.serratec.backend.serviceDto.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.backend.serviceDto.domain.Funcionario;
+import org.serratec.backend.serviceDto.repository.FuncionarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/funcionario")
+public class FuncionarioController {
+
+	@Autowired
+	private FuncionarioRepository funcionariorepository;
+	
+	@GetMapping("/lista")
+	private ResponseEntity<List<Funcionario>>listar(){
+		List<Funcionario> funcionarios = funcionariorepository.findAll();
+		return ResponseEntity.ok(funcionarios);
+	}
+}

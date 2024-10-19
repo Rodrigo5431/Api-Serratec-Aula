@@ -1,0 +1,9 @@
+spring.datasource.url=jdbc:postgresql://localhost:5432/projeto
+spring.datasource.username=postgres
+spring.datasource.password=40028922@
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=none
+spring.jackson.deserialization.fail-on-unknown-properties=true
+
+auth-jwt-secret=wOXx9za7W4cPn1J3Cu7ORa2nuw5Wm5bM
+auth-jwt-expiration-miliseg=900000

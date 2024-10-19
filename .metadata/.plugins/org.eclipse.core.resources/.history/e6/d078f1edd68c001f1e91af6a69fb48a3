@@ -1,0 +1,38 @@
+package org.serratec.backend.serviceDto.security;
+
+import java.io.IOException;
+
+import org.serratec.backend.servicedto.dto.LoginDTO;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+	private AuthenticationManager authenticationManager;
+	private JwtUtil jwtUtil;
+	
+	public JwtAuthenticationFilter(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+		this.authenticationManager = authenticationManager;
+		this.jwtUtil = jwtUtil;
+	}
+	
+	@Override
+	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+			throws AuthenticationException {
+		try {
+			LoginDTO login = new ObjectMapper().readValue(request.getInputStream(), LoginDTO.class);			
+		} catch (IOException e) {
+			
+		}
+		
+		return super.attemptAuthentication(request, response);
+	}
+	
+}

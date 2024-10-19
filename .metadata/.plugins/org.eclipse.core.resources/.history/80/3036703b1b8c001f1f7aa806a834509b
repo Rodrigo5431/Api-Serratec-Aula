@@ -1,0 +1,5 @@
+package org.serratec.backend.serviceDto.service;
+
+public class UsuarioDetalheImpl {
+
+}

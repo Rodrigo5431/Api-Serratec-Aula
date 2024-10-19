@@ -1,0 +1,15 @@
+package org.serratec.backend.serviceDto.domain;
+
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class UsuarioPerfilPK {
+
+	@ManyToOne
+	@JoinColumn(name = "id_Usuario")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_Perfil")
+	private Perfil perfil;
+}

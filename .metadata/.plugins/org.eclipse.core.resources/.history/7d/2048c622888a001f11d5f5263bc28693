@@ -1,0 +1,14 @@
+package org.serratec.backend.serviceDto.domain;
+
+import jakarta.persistence.ManyToOne;
+
+public class UsuarioPerfilPK {
+
+	@ManyToOne
+	(name = "id_Usuario")
+	private Usuario usuario;
+	
+	@ManyToOne
+	(name = "id_Perfil")
+	private Perfil perfil;
+}

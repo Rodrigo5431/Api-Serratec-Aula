@@ -1,0 +1,19 @@
+package org.serratec.backend.serviceDto.security;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+public class JwtAuthenticatonFilter extends UsernamePasswordAuthenticationFilter {
+
+	private AuthenticationManager authenticationManager;
+	private JwtUtil jwtUtil;
+	
+	public JwtAuthenticatonFilter(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+		this.authenticationManager = authenticationManager;
+        this.jwtUtil = jwtUtil;
+        
+      
+	}
+	public JwtAuthenticatonFilter(AuthenticationManager authentication)
+
+}

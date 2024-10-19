@@ -1,0 +1,27 @@
+package org.serratec.backend.serviceDto.security;
+
+import javax.crypto.SecretKey;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
+@Component
+public class JwUtil {
+
+	@Value("${auth-jwt-secret}")
+	private String jwtSecret;
+	
+	@Value("${auth-jwt-expiration}")
+	private Long jwtExpirationMiliseg;
+	
+	public String generateToken(String username) {
+		SecretKey secreKeySpec = Keys.hmacShaKeyFor(jwtSecret.getBytes());
+		return Jwts.builder().setSubject(username)
+				.setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMiliseg));
+		.sig
+	}
+	
+}

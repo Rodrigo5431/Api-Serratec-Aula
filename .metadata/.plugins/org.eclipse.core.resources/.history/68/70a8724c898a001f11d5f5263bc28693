@@ -1,0 +1,13 @@
+package org.serratec.backend.serviceDto.domain;
+
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "usuario_perfil")
+public class UsuarioPerfil {
+
+	@EmbeddedId
+	private UsuarioPerfilPK id = new UsuarioPerfilPK();
+}

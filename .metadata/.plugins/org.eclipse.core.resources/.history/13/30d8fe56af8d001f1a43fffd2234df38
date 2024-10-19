@@ -1,0 +1,6 @@
+package org.serratec.backend.serviceDto.domain;
+
+public class Endereco {
+
+	
+}

@@ -1,0 +1,10 @@
+package org.serratec.backend.serviceDto.domain;
+
+public class UsuarioPerfilPK {
+
+	(name = "Usuario_Perfil")
+	private Usuario usuario;
+	
+	(name = "Usuario_Perfil")
+	private Perfil perfil;
+}

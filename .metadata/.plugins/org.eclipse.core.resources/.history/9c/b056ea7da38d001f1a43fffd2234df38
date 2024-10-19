@@ -1,0 +1,39 @@
+package org.serratec.backend.serviceDto.service;
+
+import java.net.URI;
+
+import org.serratec.backend.serviceDto.domain.Funcionario;
+import org.serratec.backend.serviceDto.dto.FuncionarioDTO;
+import org.serratec.backend.serviceDto.repository.FuncionarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+@Service
+public class FuncionarioService {
+
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
+	
+	@Autowired
+	private FotoService fotoService;
+	
+	
+	
+	
+	
+	public FuncionarioDTO adicionarImagemUri(Funcionario funcionario) {
+		URI uri = ServletUriComponentsBuilder
+				.fromCurrentContextPath()
+				.path("/funcionario/{id}/foto")
+				.buildAndExpand(funcionario.getId())
+				.toUri();
+		FuncionarioDTO dto = new FuncionarioDTO();
+		dto.setNome(funcionario.getNome());
+		dto.setDataNascimento(funcionario.getDataNascimento());
+		dto.setSalario(funcionario.getSalario());
+		dto.setUrl(uri.toString());
+		return dto;
+	}
+	
+}
